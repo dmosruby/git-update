@@ -28,6 +28,8 @@ do
         else
             git pull
         fi
+    else
+        echo "${bold}$BRANCH is checked-out in $i${normal}"
     fi
     cd ..
 done
