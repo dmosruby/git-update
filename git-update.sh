@@ -18,6 +18,7 @@ do
         then
             echo "${bold}There are changes in $i${normal}"
         else
+            echo "${bold}Pulling $i${normal}"
             git pull
         fi
     elif [[ "$BRANCH" == "master" ]]
@@ -26,6 +27,7 @@ do
         then
             echo "${bold}There are changes in $i${normal}"
         else
+            echo "${bold}Pulling $i${normal}"
             git pull
         fi
     else
