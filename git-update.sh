@@ -52,7 +52,7 @@ printf "\n"
 
 if [ ! -z "$ERROR" ]
 then
-    echo "The following branchs could not be updated:"
+    echo "The following branches could not be updated:"
 fi
 
 for i in "${ERROR[@]}"
