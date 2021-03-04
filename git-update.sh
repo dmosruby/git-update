@@ -34,6 +34,16 @@ git_update() {
             echo "${bold}Pulling $1${normal}"
             git pull
         fi
+    elif [[ "$BRANCH" == "main" ]]
+    then
+        if [[ -n "$(git status --porcelain)" ]]
+        then
+            echo "${bold}There are changes in $1${normal}"
+            ERROR+=("${bold}There are changes in $1${normal}")
+        else
+            echo "${bold}Pulling $1${normal}"
+            git pull
+        fi
     else
         echo "${bold}$BRANCH is checked-out in $1${normal}"
         ERROR+=("${bold}$BRANCH is checked-out in $1${normal}")
