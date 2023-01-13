@@ -13,7 +13,11 @@ normal=$(tput sgr0)
 git_update() {
     git config http.sslVerify false
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
-    if [[ "$BRANCH" == "develop" ]]
+    if [[ "$BRANCH" == "HEAD" ]]
+    then
+        # Skip
+        return
+    elif [[ "$BRANCH" == "develop" ]]
     then
         if [[ -n "$(git status --porcelain)" ]]
         then
