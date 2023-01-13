@@ -15,8 +15,7 @@ git_update() {
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
     if [[ "$BRANCH" == "HEAD" ]]
     then
-        # Skip
-        return
+        echo "${bold}$BRANCH is checked-out in $1${normal}"
     elif [[ "$BRANCH" == "develop" ]]
     then
         if [[ -n "$(git status --porcelain)" ]]
